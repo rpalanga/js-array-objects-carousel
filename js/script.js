@@ -60,7 +60,7 @@ const images = [
 
 
 const contImage = document.querySelector("#mainImage");
-const slidercontainerImage = document.querySelector("#Slider-image");
+// const slidercontainerImage = document.querySelector("#Slider-image");
 
 
 for (let i = 0; i < images.length; i++) {
@@ -70,25 +70,91 @@ for (let i = 0; i < images.length; i++) {
     const testo = images[i].text;
 
     contImage.innerHTML += `
-    <div class="Contain-Element">
-        <img src="./${img}" class="w-100 h-100 object-fit-cover">
-        <h2>${titolo}</h2>
-        <p>${testo}</p>
+    <div class="Contain-Element ">
+        <img src="./${img}" >
+        <div id="description" >
+
+            <h2>${titolo}</h2>
+            <p>${testo}</p>
+
+        </div>
 
     </div>
      
     `
-    slidercontainerImage.innerHTML +=`
-    <div class="Contain-slider my-h" >
-        <img src="./${img}" class="img-fluid w-100 h-100 object-fit-cover">
+    // slidercontainerImage.innerHTML +=`
+    // <div class="Contain-slider my-h" >
+    //     <img src="./${img}" class="img-fluid w-100 h-100 object-fit-cover">
         
-    </div>
-    `
-
+    // </div>
+    // `
+    
 }
 
+document.querySelector("#mainImage .Contain-Element:nth-of-type(1)").className += "active";
 
 
+let slideNumber = 1;
 
+document.querySelector("#up-arrow").addEventListener("click", function() {
 
+    
 
+    if (slideNumber < images.length) {
+
+        
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.remove("active");
+
+        
+        slideNumber++;
+
+       
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.add("active");
+
+        
+
+    } else {
+
+         
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.remove("active");
+
+        
+        slideNumber = 1;
+
+       
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.add("active");
+
+    }
+
+});
+
+document.querySelector("#down-arrow").addEventListener("click", function() {
+
+    
+
+    if (slideNumber > 1) {
+
+        
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.remove("active");
+
+        
+        slideNumber--;
+
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.add("active");
+
+        console.log(slideNumber);
+
+    } else {
+
+         
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.remove("active");
+
+        
+        slideNumber = images.length;
+
+        
+        document.querySelector(`#mainImage .Contain-Element:nth-of-type(${slideNumber})`).classList.add("active");
+
+    }
+
+});
