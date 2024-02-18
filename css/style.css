@@ -9,6 +9,12 @@
     
 }
 
+/* 
+
+Inizio Sezione Arrow
+
+*/
+
 #arrows {
 
     display: flex;
@@ -44,12 +50,18 @@
     transform: scale(1.2);
 }
 
+/* 
+
+Fine Sezione Arrow
+
+*/
+
  
 #description {
 
     position: absolute;
     bottom: 80px;
-    left: 40px;
+    left: 20px;
     color: white;
     
 

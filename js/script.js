@@ -60,7 +60,7 @@ const images = [
 
 
 const contImage = document.querySelector("#mainImage");
-// const slidercontainerImage = document.querySelector("#Slider-image");
+const slidercontainerImage = document.querySelector("#Slider-image");
 
 
 for (let i = 0; i < images.length; i++) {
@@ -82,12 +82,12 @@ for (let i = 0; i < images.length; i++) {
     </div>
      
     `
-    // slidercontainerImage.innerHTML +=`
-    // <div class="Contain-slider my-h" >
-    //     <img src="./${img}" class="img-fluid w-100 h-100 object-fit-cover">
+    slidercontainerImage.innerHTML +=`
+    <div class="Contain-slider my-h" >
+        <img src="./${img}" class="img-fluid w-100 h-100 object-fit-cover">
         
-    // </div>
-    // `
+    </div>
+    `
     
 }
 
